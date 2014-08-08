@@ -1,0 +1,406 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>iControl REST API</title><link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200"><style>/* Highlight.js Theme Tomorrow */
+.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}</style><style>body,
+h4,
+h5 {
+  font-family: 'Roboto' sans-serif !important;
+}
+h1,
+h2,
+h3,
+.aglio {
+  font-family: 'Raleway' sans-serif !important;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  display: none;
+}
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a,
+h5:hover a {
+  display: inline;
+}
+code {
+  color: #444;
+  background-color: #ddd;
+  font-family: 'Inconsolata' monospace !important;
+}
+a[data-target] {
+  cursor: pointer;
+}
+h4 {
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.back-to-top {
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  right: 24px;
+  padding: 4px 8px;
+  background-color: #eee;
+  text-decoration: none !important;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel {
+  overflow: hidden;
+}
+.panel-heading code {
+  color: #c7254e;
+  background-color: transparent;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.panel-heading h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+a.list-group-item {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+a.list-group-item.heading {
+  background-color: #f5f5f5;
+}
+.list-group-item.collapse {
+  display: none;
+}
+.list-group-item.collapse.in {
+  display: block;
+}
+#nav {
+  margin-top: 38px;
+  min-width: 255px;
+  top: 0;
+  bottom: 0;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  overflow-y: auto;
+}
+@media (max-width: 1199px) {
+  #nav {
+    min-width: 212px;
+  }
+}
+</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a href="#virtual" class="list-group-item heading">Virtual</a><a href="#virtual-virtual" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual</a><a href="#virtual-virtual-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual State</a><a href="#virtual-virtual-state-put" style="padding-left: 32px" class="list-group-item"><i class="fa fa-pencil"></i>&nbsp;Modify a Virtual</a><a href="#virtual-virtual-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve a Virtual State</a><a href="#virtual-virtual-state-delete" style="padding-left: 32px" class="list-group-item"><i class="fa fa-warning"></i>&nbsp;Delete a Virtual</a><a href="#virtual-virtual-collection-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual Collection State</a><a href="#virtual-virtual-collection-state-post" style="padding-left: 32px" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Create a Virtual</a><a href="#virtual-virtual-collection-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve all Virtual States</a></div></nav></div><div class="col-md-9"><div><header><div class="page-header"><h1 id="top">iControl REST API</h1></div></header><div class="description"><p>This documentes a portion of the 11.5 version of the iControl REST API.</p>
+<p>NOTE: This document is a <strong>work in progress</strong>.</p>
+</div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="virtual">Virtual&nbsp;<a href="#virtual"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><p>This section groups iControl virtual resources.</p>
+<h4 id="virtual-virtual">Virtual&nbsp;<a href="#virtual-virtual"><i class="fa fa-link"></i></a></h4><h4 id="virtual-virtual-state">Virtual State&nbsp;<a href="#virtual-virtual-state"><i class="fa fa-link"></i></a></h4><p>A Virtual is the other central object utilized by the App.net Stream API. It has rich text and annotations which comprise all of the content a users sees in their feed. Virtuals are closely tied to the follow graph…</p>
+<section id="virtual-virtual-state-put" class="panel panel-warning"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Modify a Virtual</span></div><div style="float:left"><a href="#virtual-virtual-state-put" class="btn btn-xs btn-warning">PUT</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual/{name}{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Modifies the virtual server.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>test_vs</span></span><p>The name of the virtual server.</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#90781bfe52ca5920f26e671f1356feab" class="pull-right">Toggle</a></li><li id="90781bfe52ca5920f26e671f1356feab" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"8.8.8.8:80"</span></span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+    "<span class="hljs-attribute">profiles</span>": <span class="hljs-value">[
+        <span class="hljs-string">"http"</span>,
+        <span class="hljs-string">"my_ssl"</span>
+    ]
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#e51dd353c432ea9329914b697eb0dd29" class="pull-right">Toggle</a></li><li id="e51dd353c432ea9329914b697eb0dd29" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~http?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"http"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>},
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~tcp?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/tcp"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">policiesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/policies?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">fwRulesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/fw-rules?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">vsIndex</span>": <span class="hljs-value"><span class="hljs-number">161045</span></span>,
+    "<span class="hljs-attribute">vlansDisabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">translatePort</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">translateAddress</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">synCookieStatus</span>": <span class="hljs-value"><span class="hljs-string">"not-activated"</span></span>,
+    "<span class="hljs-attribute">sourcePort</span>": <span class="hljs-value"><span class="hljs-string">"preserve"</span></span>,
+    "<span class="hljs-attribute">sourceAddressTranslation</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+    "<span class="hljs-attribute">rateLimitSrcMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/test_vs?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualstate"</span></span>,
+    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"/Common/8.8.8.8:80"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">gtmScore</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">ipProtocol</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+    "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"255.255.255.255"</span></span>,
+    "<span class="hljs-attribute">mirror</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">mobileAppTunnel</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">nat64</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span>
+</span>}
+</code></pre></li></ul></section><section id="virtual-virtual-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve a Virtual State</span></div><div style="float:left"><a href="#virtual-virtual-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual/{name}{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Returns a specific Virtual.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>test_vs</span></span><p>The name of the virtual server.</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#6c9a2333ff0960f87822729f90e64242" class="pull-right">Toggle</a></li><li id="6c9a2333ff0960f87822729f90e64242" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~http?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"http"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>},
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~tcp?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/tcp"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">policiesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/policies?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">fwRulesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/fw-rules?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">vsIndex</span>": <span class="hljs-value"><span class="hljs-number">161045</span></span>,
+    "<span class="hljs-attribute">vlansDisabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">translatePort</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">translateAddress</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">synCookieStatus</span>": <span class="hljs-value"><span class="hljs-string">"not-activated"</span></span>,
+    "<span class="hljs-attribute">sourcePort</span>": <span class="hljs-value"><span class="hljs-string">"preserve"</span></span>,
+    "<span class="hljs-attribute">sourceAddressTranslation</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+    "<span class="hljs-attribute">rateLimitSrcMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/test_vs?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualstate"</span></span>,
+    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"/Common/8.8.8.8:80"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">gtmScore</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">ipProtocol</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+    "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"255.255.255.255"</span></span>,
+    "<span class="hljs-attribute">mirror</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">mobileAppTunnel</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">nat64</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span>
+</span>}
+</code></pre></li></ul></section><section id="virtual-virtual-state-delete" class="panel panel-danger"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Delete a Virtual</span></div><div style="float:left"><a href="#virtual-virtual-state-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual/{name}{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Delete a Virtual. The current user must be the same user who created the Virtual. It returns the deleted Virtual on success.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>test_vs</span></span><p>The name of the virtual server.</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong></li></ul></section><h4 id="virtual-virtual-collection-state">Virtual Collection State&nbsp;<a href="#virtual-virtual-collection-state"><i class="fa fa-link"></i></a></h4><p>A Collection of posts.</p>
+<section id="virtual-virtual-collection-state-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Create a Virtual</span></div><div style="float:left"><a href="#virtual-virtual-collection-state-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Create a new Virtual object. Mentions and hashtags will be parsed out of the post text, as will bare URLs…</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#a4afbfe1e4b9f474d780893c4b62f51c" class="pull-right">Toggle</a></li><li id="a4afbfe1e4b9f474d780893c4b62f51c" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"8.8.8.8:80"</span></span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+    "<span class="hljs-attribute">profiles</span>": <span class="hljs-value">[
+        <span class="hljs-string">"http"</span>,
+        <span class="hljs-string">"my_ssl"</span>
+    ]
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#494c42f327a4575c63bca86e99734bdc" class="pull-right">Toggle</a></li><li id="494c42f327a4575c63bca86e99734bdc" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~http?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"http"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>},
+          {
+              "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+              "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~tcp?ver=11.5.0"</span></span>,
+              "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+              "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/tcp"</span></span>,
+              "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+              "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+          </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">policiesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/policies?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">fwRulesReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/fw-rules?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">vsIndex</span>": <span class="hljs-value"><span class="hljs-number">161045</span></span>,
+    "<span class="hljs-attribute">vlansDisabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">translatePort</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">translateAddress</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">synCookieStatus</span>": <span class="hljs-value"><span class="hljs-string">"not-activated"</span></span>,
+    "<span class="hljs-attribute">sourcePort</span>": <span class="hljs-value"><span class="hljs-string">"preserve"</span></span>,
+    "<span class="hljs-attribute">sourceAddressTranslation</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+    "<span class="hljs-attribute">rateLimitSrcMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/test_vs?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualstate"</span></span>,
+    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"/Common/8.8.8.8:80"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">gtmScore</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">ipProtocol</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+    "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"255.255.255.255"</span></span>,
+    "<span class="hljs-attribute">mirror</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">mobileAppTunnel</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">nat64</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span>
+</span>}
+</code></pre></li></ul></section><section id="virtual-virtual-collection-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve all Virtual States</span></div><div style="float:left"><a href="#virtual-virtual-collection-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Retrieves all posts. </p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#8f826127649875051ad306226b1c4b18" class="pull-right">Toggle</a></li><li id="8f826127649875051ad306226b1c4b18" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+                {
+                    "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+                    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~http?ver=11.5.0"</span></span>,
+                    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+                    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http"</span></span>,
+                    "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"http"</span></span>,
+                    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+                </span>},
+                {
+                    "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"all"</span></span>,
+                    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles/~Common~tcp?ver=11.5.0"</span></span>,
+                    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+                    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/tcp"</span></span>,
+                    "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+                    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:profiles:profilesstate"</span>
+                </span>}
+              ]</span>,
+              "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/profiles?ver=11.5.0"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">policiesReference</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/policies?ver=11.5.0"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">fwRulesReference</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/fw-rules?ver=11.5.0"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">vsIndex</span>": <span class="hljs-value"><span class="hljs-number">161045</span></span>,
+          "<span class="hljs-attribute">vlansDisabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">translatePort</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+          "<span class="hljs-attribute">translateAddress</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+          "<span class="hljs-attribute">synCookieStatus</span>": <span class="hljs-value"><span class="hljs-string">"not-activated"</span></span>,
+          "<span class="hljs-attribute">sourcePort</span>": <span class="hljs-value"><span class="hljs-string">"preserve"</span></span>,
+          "<span class="hljs-attribute">sourceAddressTranslation</span>": <span class="hljs-value">{}</span>,
+          "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+          "<span class="hljs-attribute">rateLimitSrcMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+          "<span class="hljs-attribute">nat64</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+          "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+          "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+          "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs?ver=11.5.0"</span></span>,
+          "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1210128</span></span>,
+          "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/test_vs"</span></span>,
+          "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
+          "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualstate"</span></span>,
+          "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"/Common/8.8.8.8:80"</span></span>,
+          "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+          "<span class="hljs-attribute">gtmScore</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">ipProtocol</span>": <span class="hljs-value"><span class="hljs-string">"tcp"</span></span>,
+          "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"255.255.255.255"</span></span>,
+          "<span class="hljs-attribute">mirror</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+          "<span class="hljs-attribute">mobileAppTunnel</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualcollectionstate"</span>
+</span>}
+</code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 08 Aug 2014</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
+
+</div></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script>(function() {
+  if (location.protocol === 'file:') {
+    document.getElementById('localFile').style.display = 'block';
+  }
+
+}).call(this);
+</script><script>(function() {
+  $('table').addClass('table');
+
+}).call(this);
+</script></html>
