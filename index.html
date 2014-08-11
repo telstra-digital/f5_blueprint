@@ -95,7 +95,7 @@ a.list-group-item.heading {
     min-width: 212px;
   }
 }
-</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a href="#virtual" class="list-group-item heading">Virtual</a><a href="#virtual-virtual" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual</a><a href="#virtual-virtual-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual State</a><a href="#virtual-virtual-state-put" style="padding-left: 32px" class="list-group-item"><i class="fa fa-pencil"></i>&nbsp;Modify a Virtual</a><a href="#virtual-virtual-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve a Virtual State</a><a href="#virtual-virtual-state-delete" style="padding-left: 32px" class="list-group-item"><i class="fa fa-warning"></i>&nbsp;Delete a Virtual</a><a href="#virtual-virtual-collection-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual Collection State</a><a href="#virtual-virtual-collection-state-post" style="padding-left: 32px" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Create a Virtual</a><a href="#virtual-virtual-collection-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve all Virtual States</a></div></nav></div><div class="col-md-9"><div><header><div class="page-header"><h1 id="top">iControl REST API</h1></div></header><div class="description"><p>This documentes a portion of the 11.5 version of the iControl REST API.</p>
+</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a href="#virtual" class="list-group-item heading">Virtual</a><a href="#virtual-virtual" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual</a><a href="#virtual-virtual-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual State</a><a href="#virtual-virtual-state-put" style="padding-left: 32px" class="list-group-item"><i class="fa fa-pencil"></i>&nbsp;Modify a Virtual</a><a href="#virtual-virtual-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve a Virtual State</a><a href="#virtual-virtual-state-delete" style="padding-left: 32px" class="list-group-item"><i class="fa fa-warning"></i>&nbsp;Delete a Virtual</a><a href="#virtual-virtual-collection-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Virtual Collection State</a><a href="#virtual-virtual-collection-state-post" style="padding-left: 32px" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Create a Virtual</a><a href="#virtual-virtual-collection-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve all Virtual States</a></div><div class="list-group"><a href="#client-ssl" class="list-group-item heading">Client SSL</a><a href="#client-ssl-client-ssl-state" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Client SSL State</a><a href="#client-ssl-client-ssl-collection-state" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Client SSL Collection State</a></div><div class="list-group"><a href="#pool" class="list-group-item heading">Pool</a><a href="#pool-pool-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Pool State</a><a href="#pool-pool-state-put" style="padding-left: 32px" class="list-group-item"><i class="fa fa-pencil"></i>&nbsp;Modify a Pool</a><a href="#pool-pool-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve a Pool State</a><a href="#pool-pool-state-delete" style="padding-left: 32px" class="list-group-item"><i class="fa fa-warning"></i>&nbsp;Delete a Pool</a><a href="#pool-pool-collection-state" class="list-group-item"><i class="fa fa-bars"></i>&nbsp;Pool Collection State</a><a href="#pool-pool-collection-state-get" style="padding-left: 32px" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Retrieve all Pool States</a><a href="#pool-pool-collection-state-post" style="padding-left: 32px" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Create a Pool</a></div></nav></div><div class="col-md-9"><div><header><div class="page-header"><h1 id="top">iControl REST API</h1></div></header><div class="description"><p>This documentes a portion of the 11.5 version of the iControl REST API.</p>
 <p>NOTE: This document is a <strong>work in progress</strong>.</p>
 </div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="virtual">Virtual&nbsp;<a href="#virtual"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><p>This section groups iControl virtual resources.</p>
 <h4 id="virtual-virtual">Virtual&nbsp;<a href="#virtual-virtual"><i class="fa fa-link"></i></a></h4><h4 id="virtual-virtual-state">Virtual State&nbsp;<a href="#virtual-virtual-state"><i class="fa fa-link"></i></a></h4><p>A Virtual is the other central object utilized by the App.net Stream API. It has rich text and annotations which comprise all of the content a users sees in their feed. Virtuals are closely tied to the follow graph…</p>
@@ -103,16 +103,13 @@ a.list-group-item.heading {
 </div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>test_vs</span></span><p>The name of the virtual server.</p>
 </dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
 </dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
-</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#90781bfe52ca5920f26e671f1356feab" class="pull-right">Toggle</a></li><li id="90781bfe52ca5920f26e671f1356feab" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
-    "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"8.8.8.8:80"</span></span>,
-    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#c70272503c23c7c4861626b67781ed18" class="pull-right">Toggle</a></li><li id="c70272503c23c7c4861626b67781ed18" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">profiles</span>": <span class="hljs-value">[
         <span class="hljs-string">"http"</span>,
         <span class="hljs-string">"my_ssl"</span>
     ]
 </span>}
-</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#e51dd353c432ea9329914b697eb0dd29" class="pull-right">Toggle</a></li><li id="e51dd353c432ea9329914b697eb0dd29" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#537b4451f684f0862e00c4e3c6a56175" class="pull-right">Toggle</a></li><li id="537b4451f684f0862e00c4e3c6a56175" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
           {
@@ -157,6 +154,7 @@ a.list-group-item.heading {
     "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
     "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">pool</span>": <span class="hljs-value"><span class="hljs-string">"/Common/test_pool"</span></span>,
     "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
     "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
@@ -178,7 +176,7 @@ a.list-group-item.heading {
 </div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>test_vs</span></span><p>The name of the virtual server.</p>
 </dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
 </dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
-</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#6c9a2333ff0960f87822729f90e64242" class="pull-right">Toggle</a></li><li id="6c9a2333ff0960f87822729f90e64242" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#77cf422abea02a9f8f4137324d111fbd" class="pull-right">Toggle</a></li><li id="77cf422abea02a9f8f4137324d111fbd" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
           {
@@ -223,6 +221,7 @@ a.list-group-item.heading {
     "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
     "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">pool</span>": <span class="hljs-value"><span class="hljs-string">"/Common/test_pool"</span></span>,
     "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
     "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
@@ -248,7 +247,7 @@ a.list-group-item.heading {
 <section id="virtual-virtual-collection-state-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Create a Virtual</span></div><div style="float:left"><a href="#virtual-virtual-collection-state-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/virtual{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Create a new Virtual object. Mentions and hashtags will be parsed out of the post text, as will bare URLs…</p>
 </div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
 </dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
-</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#a4afbfe1e4b9f474d780893c4b62f51c" class="pull-right">Toggle</a></li><li id="a4afbfe1e4b9f474d780893c4b62f51c" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#a4afbfe1e4b9f474d780893c4b62f51c" class="pull-right">Toggle</a></li><li id="a4afbfe1e4b9f474d780893c4b62f51c" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_vs"</span></span>,
     "<span class="hljs-attribute">destination</span>": <span class="hljs-value"><span class="hljs-string">"8.8.8.8:80"</span></span>,
     "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"0.0.0.0/0"</span></span>,
@@ -257,7 +256,7 @@ a.list-group-item.heading {
         <span class="hljs-string">"my_ssl"</span>
     ]
 </span>}
-</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#494c42f327a4575c63bca86e99734bdc" class="pull-right">Toggle</a></li><li id="494c42f327a4575c63bca86e99734bdc" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#4a182c3ad001426be8ae15e9d2043fe9" class="pull-right">Toggle</a></li><li id="4a182c3ad001426be8ae15e9d2043fe9" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">profilesReference</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
           {
@@ -302,6 +301,7 @@ a.list-group-item.heading {
     "<span class="hljs-attribute">rateLimitMode</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
     "<span class="hljs-attribute">rateLimitDstMask</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">pool</span>": <span class="hljs-value"><span class="hljs-string">"/Common/test_pool"</span></span>,
     "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">cmpEnabled</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
     "<span class="hljs-attribute">autoLasthop</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
@@ -391,7 +391,365 @@ a.list-group-item.heading {
     "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/virtual?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
     "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:virtual:virtualcollectionstate"</span>
 </span>}
-</code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 08 Aug 2014</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
+</code></pre></li></ul></section></div></div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="client-ssl">Client SSL&nbsp;<a href="#client-ssl"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><p>This section groups iControl Client SLL profiles.</p>
+<h4 id="client-ssl-client-ssl-state">Client SSL State&nbsp;<a href="#client-ssl-client-ssl-state"><i class="fa fa-link"></i></a></h4><section id="client-ssl-client-ssl-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve a Client SSL State</span></div><div style="float:left"><a href="#client-ssl-client-ssl-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/profile/client-ssl/{name}{?ver}</code></div></div><div class="panel-body"><p>Returns a specific Virtual.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>wom-default-clientssl</span></span><p>Name of Client SSL profile</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#01fa534a2bdb2ce3b85d306a6ef91dcb" class="pull-right">Toggle</a></li><li id="01fa534a2bdb2ce3b85d306a6ef91dcb" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">certKeyChain</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.key"</span></span>,
+            "<span class="hljs-attribute">cert</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.crt"</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"default"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">uncleanShutdown</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">strictResume</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">sslSignHash</span>": <span class="hljs-value"><span class="hljs-string">"any"</span></span>,
+    "<span class="hljs-attribute">sslForwardProxyBypass</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">sslForwardProxy</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">sniRequire</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+    "<span class="hljs-attribute">sniDefault</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+    "<span class="hljs-attribute">sessionTicket</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">secureRenegotiation</span>": <span class="hljs-value"><span class="hljs-string">"require"</span></span>,
+    "<span class="hljs-attribute">retainCertificate</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+    "<span class="hljs-attribute">certLookupByIpaddrPort</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">certLifespan</span>": <span class="hljs-value"><span class="hljs-number">30</span></span>,
+    "<span class="hljs-attribute">certExtensionIncludes</span>": <span class="hljs-value">[
+        <span class="hljs-string">"basic-constraints"</span>,
+        <span class="hljs-string">"subject-alternative-name"</span>
+    ]</span>,
+    "<span class="hljs-attribute">cert</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.crt"</span></span>,
+    "<span class="hljs-attribute">cacheTimeout</span>": <span class="hljs-value"><span class="hljs-number">3600</span></span>,
+    "<span class="hljs-attribute">cacheSize</span>": <span class="hljs-value"><span class="hljs-number">262144</span></span>,
+    "<span class="hljs-attribute">authenticateDepth</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+    "<span class="hljs-attribute">authenticate</span>": <span class="hljs-value"><span class="hljs-string">"once"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:profile:client-ssl:client-sslstate"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"wom-default-clientssl"</span></span>,
+    "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/wom-default-clientssl"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/profile/client-ssl/~Common~wom-default-clientssl?ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">alertTimeout</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+    "<span class="hljs-attribute">allowNonSsl</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">ciphers</span>": <span class="hljs-value"><span class="hljs-string">"DEFAULT"</span></span>,
+    "<span class="hljs-attribute">defaultsFrom</span>": <span class="hljs-value"><span class="hljs-string">"/Common/clientssl"</span></span>,
+    "<span class="hljs-attribute">forwardProxyBypassDefaultAction</span>": <span class="hljs-value"><span class="hljs-string">"intercept"</span></span>,
+    "<span class="hljs-attribute">genericAlert</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">handshakeTimeout</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+    "<span class="hljs-attribute">inheritCertkeychain</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.key"</span></span>,
+    "<span class="hljs-attribute">modSslMethods</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">mode</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+    "<span class="hljs-attribute">tmOptions</span>": <span class="hljs-value">[
+        <span class="hljs-string">"dont-insert-empty-fragments"</span>
+    ]</span>,
+    "<span class="hljs-attribute">peerCertMode</span>": <span class="hljs-value"><span class="hljs-string">"ignore"</span></span>,
+    "<span class="hljs-attribute">proxySsl</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">renegotiateMaxRecordDelay</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+    "<span class="hljs-attribute">renegotiatePeriod</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+    "<span class="hljs-attribute">renegotiateSize</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+    "<span class="hljs-attribute">renegotiation</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span>
+</span>}
+</code></pre></li></ul></section><h4 id="client-ssl-client-ssl-collection-state">Client SSL Collection State&nbsp;<a href="#client-ssl-client-ssl-collection-state"><i class="fa fa-link"></i></a></h4><p>A Collection of client ssl profiles.</p>
+<section id="client-ssl-client-ssl-collection-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve all Client SSL States</span></div><div style="float:left"><a href="#client-ssl-client-ssl-collection-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/profile/client-ssl{?ver}</code></div></div><div class="panel-body"><p>Retrieves all posts. </p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#b7540edc53f15971f03934f6f5f8084b" class="pull-right">Toggle</a></li><li id="b7540edc53f15971f03934f6f5f8084b" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">certKeyChain</span>": <span class="hljs-value">[
+                {
+                    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.key"</span></span>,
+                    "<span class="hljs-attribute">cert</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.crt"</span></span>,
+                    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"default"</span>
+                </span>}
+            ]</span>,
+            "<span class="hljs-attribute">uncleanShutdown</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+            "<span class="hljs-attribute">strictResume</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">sslSignHash</span>": <span class="hljs-value"><span class="hljs-string">"any"</span></span>,
+            "<span class="hljs-attribute">sslForwardProxyBypass</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">sslForwardProxy</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">sniRequire</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+            "<span class="hljs-attribute">sniDefault</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+            "<span class="hljs-attribute">sessionTicket</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">secureRenegotiation</span>": <span class="hljs-value"><span class="hljs-string">"require"</span></span>,
+            "<span class="hljs-attribute">retainCertificate</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+            "<span class="hljs-attribute">certLookupByIpaddrPort</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">certLifespan</span>": <span class="hljs-value"><span class="hljs-number">30</span></span>,
+            "<span class="hljs-attribute">certExtensionIncludes</span>": <span class="hljs-value">[
+                <span class="hljs-string">"basic-constraints"</span>,
+                <span class="hljs-string">"subject-alternative-name"</span>
+            ]</span>,
+            "<span class="hljs-attribute">cert</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.crt"</span></span>,
+            "<span class="hljs-attribute">cacheTimeout</span>": <span class="hljs-value"><span class="hljs-number">3600</span></span>,
+            "<span class="hljs-attribute">cacheSize</span>": <span class="hljs-value"><span class="hljs-number">262144</span></span>,
+            "<span class="hljs-attribute">authenticateDepth</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+            "<span class="hljs-attribute">authenticate</span>": <span class="hljs-value"><span class="hljs-string">"once"</span></span>,
+            "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:profile:client-ssl:client-sslstate"</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"wom-default-clientssl"</span></span>,
+            "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+            "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/wom-default-clientssl"</span></span>,
+            "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+            "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/profile/client-ssl/~Common~wom-default-clientssl?ver=11.5.0"</span></span>,
+            "<span class="hljs-attribute">alertTimeout</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+            "<span class="hljs-attribute">allowNonSsl</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+            "<span class="hljs-attribute">ciphers</span>": <span class="hljs-value"><span class="hljs-string">"DEFAULT"</span></span>,
+            "<span class="hljs-attribute">defaultsFrom</span>": <span class="hljs-value"><span class="hljs-string">"/Common/clientssl"</span></span>,
+            "<span class="hljs-attribute">forwardProxyBypassDefaultAction</span>": <span class="hljs-value"><span class="hljs-string">"intercept"</span></span>,
+            "<span class="hljs-attribute">genericAlert</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+            "<span class="hljs-attribute">handshakeTimeout</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+            "<span class="hljs-attribute">inheritCertkeychain</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+            "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"/Common/default.key"</span></span>,
+            "<span class="hljs-attribute">modSslMethods</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">mode</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+            "<span class="hljs-attribute">tmOptions</span>": <span class="hljs-value">[
+                <span class="hljs-string">"dont-insert-empty-fragments"</span>
+            ]</span>,
+            "<span class="hljs-attribute">peerCertMode</span>": <span class="hljs-value"><span class="hljs-string">"ignore"</span></span>,
+            "<span class="hljs-attribute">proxySsl</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">renegotiateMaxRecordDelay</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+            "<span class="hljs-attribute">renegotiatePeriod</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+            "<span class="hljs-attribute">renegotiateSize</span>": <span class="hljs-value"><span class="hljs-string">"indefinite"</span></span>,
+            "<span class="hljs-attribute">renegotiation</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/profile/client-ssl?ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:profile:client-ssl:client-sslcollectionstate"</span>
+</span>}
+</code></pre></li></ul></section></div></div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="pool">Pool&nbsp;<a href="#pool"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><p>This section groups iControl Pools.</p>
+<h4 id="pool-pool-state">Pool State&nbsp;<a href="#pool-pool-state"><i class="fa fa-link"></i></a></h4><section id="pool-pool-state-put" class="panel panel-warning"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Modify a Pool</span></div><div style="float:left"><a href="#pool-pool-state-put" class="btn btn-xs btn-warning">PUT</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/pool/{name}{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Modifies the pool.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>wom-default-clientssl</span></span><p>Name of Client SSL profile</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#5f93914dbaa7b77127d18873202814fa" class="pull-right">Toggle</a></li><li id="5f93914dbaa7b77127d18873202814fa" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">members</span>": <span class="hljs-value">[<span class="hljs-string">"10.73.251.74:80"</span>]
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#ba95889276ea96fe60d109fcf0b96088" class="pull-right">Toggle</a></li><li id="ba95889276ea96fe60d109fcf0b96088" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">membersReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+            {
+                "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+                "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75"</span></span>,
+                "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~10.73.251.75:80?ver=11.5.0"</span></span>,
+                "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+                "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:members:membersstate"</span></span>,
+                "<span class="hljs-attribute">dynamicRatio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">inheritProfile</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+                "<span class="hljs-attribute">logging</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+                "<span class="hljs-attribute">priorityGroup</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">ratio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-string">"monitor-enabled"</span>
+            </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slowRampTime</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+    "<span class="hljs-attribute">reselectTries</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueTimeLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueOnConnectionLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">queueDepthLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http "</span></span>,
+    "<span class="hljs-attribute">minUpMembersChecking</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">ignorePersistedWeight</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">allowSnat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">allowNat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/test_pool?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:poolstate"</span></span>,
+    "<span class="hljs-attribute">ipTosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">ipTosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">loadBalancingMode</span>": <span class="hljs-value"><span class="hljs-string">"round-robin"</span></span>,
+    "<span class="hljs-attribute">minActiveMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembersAction</span>": <span class="hljs-value"><span class="hljs-string">"failover"</span>
+</span>}
+</code></pre></li></ul></section><section id="pool-pool-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve a Pool State</span></div><div style="float:left"><a href="#pool-pool-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/pool/{name}{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Returns a specific pool state.</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>wom-default-clientssl</span></span><p>Name of Client SSL profile</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#23c8107f662630100f19b4d73793c237" class="pull-right">Toggle</a></li><li id="23c8107f662630100f19b4d73793c237" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">membersReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+            {
+                "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+                "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75"</span></span>,
+                "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~10.73.251.75:80?ver=11.5.0"</span></span>,
+                "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+                "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:members:membersstate"</span></span>,
+                "<span class="hljs-attribute">dynamicRatio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">inheritProfile</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+                "<span class="hljs-attribute">logging</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+                "<span class="hljs-attribute">priorityGroup</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">ratio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-string">"monitor-enabled"</span>
+            </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slowRampTime</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+    "<span class="hljs-attribute">reselectTries</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueTimeLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueOnConnectionLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">queueDepthLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http "</span></span>,
+    "<span class="hljs-attribute">minUpMembersChecking</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">ignorePersistedWeight</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">allowSnat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">allowNat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/test_pool?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:poolstate"</span></span>,
+    "<span class="hljs-attribute">ipTosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">ipTosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">loadBalancingMode</span>": <span class="hljs-value"><span class="hljs-string">"round-robin"</span></span>,
+    "<span class="hljs-attribute">minActiveMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembersAction</span>": <span class="hljs-value"><span class="hljs-string">"failover"</span>
+</span>}
+</code></pre></li></ul></section><section id="pool-pool-state-delete" class="panel panel-danger"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Delete a Pool</span></div><div style="float:left"><a href="#pool-pool-state-delete" class="btn btn-xs btn-danger">DELETE</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/pool/{name}{?ver,expandSubcollections}</code></div></div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>name</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>wom-default-clientssl</span></span><p>Name of Client SSL profile</p>
+</dd><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong></li></ul></section><h4 id="pool-pool-collection-state">Pool Collection State&nbsp;<a href="#pool-pool-collection-state"><i class="fa fa-link"></i></a></h4><p>A Collection of client ssl profiles.</p>
+<section id="pool-pool-collection-state-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Retrieve all Pool States</span></div><div style="float:left"><a href="#pool-pool-collection-state-get" class="btn btn-xs btn-primary">GET</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/pool{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Retrieves all posts. </p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#5f85e82af4df12ba7d6bf90a9dd23cf3" class="pull-right">Toggle</a></li><li id="5f85e82af4df12ba7d6bf90a9dd23cf3" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">membersReference</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+                    {
+                        "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+                        "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                        "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75"</span></span>,
+                        "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~10.73.251.75:80?ver=11.5.0"</span></span>,
+                        "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+                        "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/10.73.251.75:80"</span></span>,
+                        "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75:80"</span></span>,
+                        "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:members:membersstate"</span></span>,
+                        "<span class="hljs-attribute">dynamicRatio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                        "<span class="hljs-attribute">inheritProfile</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+                        "<span class="hljs-attribute">logging</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                        "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+                        "<span class="hljs-attribute">priorityGroup</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                        "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                        "<span class="hljs-attribute">ratio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                        "<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-string">"monitor-enabled"</span>
+                    </span>}
+                ]</span>,
+                "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+                "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members?ver=11.5.0"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">slowRampTime</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+            "<span class="hljs-attribute">reselectTries</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">queueTimeLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">queueOnConnectionLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">queueDepthLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http "</span></span>,
+            "<span class="hljs-attribute">minUpMembersChecking</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">ignorePersistedWeight</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+            "<span class="hljs-attribute">allowSnat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+            "<span class="hljs-attribute">allowNat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+            "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/test_pool?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+            "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+            "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+            "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:poolstate"</span></span>,
+            "<span class="hljs-attribute">ipTosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+            "<span class="hljs-attribute">ipTosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+            "<span class="hljs-attribute">linkQosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+            "<span class="hljs-attribute">linkQosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+            "<span class="hljs-attribute">loadBalancingMode</span>": <span class="hljs-value"><span class="hljs-string">"round-robin"</span></span>,
+            "<span class="hljs-attribute">minActiveMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">minUpMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">minUpMembersAction</span>": <span class="hljs-value"><span class="hljs-string">"failover"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:poolcollectionstate"</span>
+</span>}
+</code></pre></li></ul></section><section id="pool-pool-collection-state-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Create a Pool</span></div><div style="float:left"><a href="#pool-pool-collection-state-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/mgmt/tm/ltm/pool{?ver,expandSubcollections}</code></div></div><div class="panel-body"><p>Create a new Virtual object. Mentions and hashtags will be parsed out of the post text, as will bare URLs…</p>
+</div><ul class="list-group"><li class="list-group-item bg-default"><strong>Parameters</strong></li><li class="list-group-item"><dl class="dl-horizontal"><dt>ver</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>11.5.0</span></span><p>The version of the API to consume.</p>
+</dd><dt>expandSubcollections</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>true</span></span><p>Expand the subcollection of the API.</p>
+</dd></dl></li></ul><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#fba26ee9a4467742d8356cb08146cfac" class="pull-right">Toggle</a></li><li id="fba26ee9a4467742d8356cb08146cfac" class="list-group-item panel-collapse collapse"><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"http"</span></span>,
+    "<span class="hljs-attribute">members</span>": <span class="hljs-value">[<span class="hljs-string">"10.73.251.74:80"</span>]
+</span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#ba53b583e7ede48b94ccba3b8f995136" class="pull-right">Toggle</a></li><li id="ba53b583e7ede48b94ccba3b8f995136" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">membersReference</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+            {
+                "<span class="hljs-attribute">state</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+                "<span class="hljs-attribute">connectionLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75"</span></span>,
+                "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~10.73.251.75:80?ver=11.5.0"</span></span>,
+                "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+                "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"/Common/10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">partition</span>": <span class="hljs-value"><span class="hljs-string">"Common"</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"10.73.251.75:80"</span></span>,
+                "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:members:membersstate"</span></span>,
+                "<span class="hljs-attribute">dynamicRatio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">inheritProfile</span>": <span class="hljs-value"><span class="hljs-string">"enabled"</span></span>,
+                "<span class="hljs-attribute">logging</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"default"</span></span>,
+                "<span class="hljs-attribute">priorityGroup</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">rateLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+                "<span class="hljs-attribute">ratio</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+                "<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-string">"monitor-enabled"</span>
+            </span>}
+        ]</span>,
+        "<span class="hljs-attribute">isSubcollection</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members?ver=11.5.0"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slowRampTime</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+    "<span class="hljs-attribute">reselectTries</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueTimeLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">queueOnConnectionLimit</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">queueDepthLimit</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">monitor</span>": <span class="hljs-value"><span class="hljs-string">"/Common/http "</span></span>,
+    "<span class="hljs-attribute">minUpMembersChecking</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">ignorePersistedWeight</span>": <span class="hljs-value"><span class="hljs-string">"disabled"</span></span>,
+    "<span class="hljs-attribute">allowSnat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">allowNat</span>": <span class="hljs-value"><span class="hljs-string">"yes"</span></span>,
+    "<span class="hljs-attribute">selfLink</span>": <span class="hljs-value"><span class="hljs-string">"https://localhost/mgmt/tm/ltm/pool/test_pool?expandSubcollections=true&amp;ver=11.5.0"</span></span>,
+    "<span class="hljs-attribute">generation</span>": <span class="hljs-value"><span class="hljs-number">1355740</span></span>,
+    "<span class="hljs-attribute">fullPath</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"test_pool"</span></span>,
+    "<span class="hljs-attribute">kind</span>": <span class="hljs-value"><span class="hljs-string">"tm:ltm:pool:poolstate"</span></span>,
+    "<span class="hljs-attribute">ipTosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">ipTosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToClient</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">linkQosToServer</span>": <span class="hljs-value"><span class="hljs-string">"pass-through"</span></span>,
+    "<span class="hljs-attribute">loadBalancingMode</span>": <span class="hljs-value"><span class="hljs-string">"round-robin"</span></span>,
+    "<span class="hljs-attribute">minActiveMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembers</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">minUpMembersAction</span>": <span class="hljs-value"><span class="hljs-string">"failover"</span>
+</span>}
+</code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 11 Aug 2014</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
 
 </div></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script>(function() {
   if (location.protocol === 'file:') {
