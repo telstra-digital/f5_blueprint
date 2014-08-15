@@ -1,9 +1,6 @@
 # Group NET
 
-## NET Collection State [/mgmt/tm/net{?ver}]
-
-+ Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
+## NET Collection State [/mgmt/tm/net?ver=11.5.0]
 
 + Model (application/json)
 
@@ -142,9 +139,124 @@
     ```
 
 ### Retrieve all NET States [GET]
-Retrieves all ltm module components
+Retrieves all NET module components
 
 + Response 200
 
     [NET Collection State][]
+
+# Group VLAN
+This section groups iControl VLANs.
+
+## VLAN State [/mgmt/tm/net/vlan/{name}?ver=11.5.0{?expandSubcollections}]
+
++ Parameters
+    + name (string, `wom-default-clientssl`) ... Name of Client SSL profile
+    + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
+
++ Model (application/json)
+
+    ```json
+    {
+      "interfacesReference": {
+        "items": [
+          {
+            "tagged": null,
+            "selfLink": "https://localhost/mgmt/tm/net/vlan/~Common~test_vlan/interfaces/1.2?ver=11.5.0",
+            "generation": 39587,
+            "fullPath": "1.2",
+            "name": "1.2",
+            "kind": "tm:net:vlan:interfaces:interfacesstate"
+          }
+        ],
+        "isSubcollection": true,
+        "link": "https://localhost/mgmt/tm/net/vlan/~Common~test_vlan/interfaces?ver=11.5.0"
+      },
+      "tag": 465,
+      "dagRoundRobin": "disabled",
+      "cmpHash": "default",
+      "autoLasthop": "default",
+      "selfLink": "https://localhost/mgmt/tm/net/vlan/test_vlan?expandSubcollections=true&ver=11.5.0",
+      "generation": 39587,
+      "fullPath": "test_vlan",
+      "name": "test_vlan",
+      "kind": "tm:net:vlan:vlanstate",
+      "failsafe": "disabled",
+      "failsafeAction": "failover-restart-tm",
+      "failsafeTimeout": 90,
+      "ifIndex": 6512,
+      "learning": "enable-forward",
+      "mtu": 1500,
+      "sflow": {
+        "samplingRateGlobal": "yes",
+        "samplingRate": 0,
+        "pollIntervalGlobal": "yes",
+        "pollInterval": 0
+      },
+      "sourceChecking": "disabled"
+    }
+    ```
+
+### Modify a VLAN [PUT]
+
++ Request
+
+    ```json
+    {}
+    ```
+
++ Response 200
+
+    [VLAN State][]
+
+### Retrieve a VLAN State [GET]
+
++ Response 200
+
+    [VLAN State][]
+
+
+### Delete a VLAN [DELETE]
+
++ Response 200
+
+## VLAN Collection State [/mgmt/tm/net/vlan?ver=11.5.0{?expandSubcollections}]
+
++ Parameters
+    + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
+
++ Model (application/json)
+
+    ```json
+    {
+      "items": [
+        {
+          "name": "test_vlan",
+          "kind": "tm:net:vlan:vlanstate",
+          "...": "...",
+          }
+        }
+      ],
+      "selfLink": "https://localhost/mgmt/tm/net/vlan?expandSubcollections=true&ver=11.5.0",
+      "kind": "tm:net:vlan:vlancollectionstate"
+    }
+    ```
+
+### Retrieve all VLAN States [GET]
+
++ Response 200
+
+    [VLAN Collection State][]
+
+### Create a VLAN [POST]
+
++ Request
+
+    ```json
+    {}
+    ```
+
++ Response 200
+
+    [VLAN State][]
 

@@ -1,9 +1,6 @@
 # Group LTM
 
-## LTM Collection State [/mgmt/tm/ltm{?ver}]
-
-+ Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
+## LTM Collection State [/mgmt/tm/ltm?ver=11.5.0]
 
 + Model (application/json)
 
@@ -141,12 +138,11 @@ Retrieves all ltm module components
 # Group Virtual
 This section groups iControl virtual resources.
 
-## Virtual State [/mgmt/tm/ltm/virtual/{name}{?ver,expandSubcollections}]
+## Virtual State [/mgmt/tm/ltm/virtual/{name}?ver=11.5.0{?expandSubcollections}]
 A Virtual is the other central object utilized by the App.net Stream API. It has rich text and annotations which comprise all of the content a users sees in their feed. Virtuals are closely tied to the follow graph...
 
 + Parameters
     + name (string, `test_vs`) ... The name of the virtual server.
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
     + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
 
 + Model (application/json)
@@ -257,11 +253,10 @@ Delete a Virtual. The current user must be the same user who created the Virtual
 
 + Response 200
 
-## Virtual Collection State [/mgmt/tm/ltm/virtual{?ver,expandSubcollections}]
+## Virtual Collection State [/mgmt/tm/ltm/virtual?ver=11.5.0{?expandSubcollections}]
 A Collection of posts.
 
 + Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
     + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
 
 + Model (application/json)
@@ -341,11 +336,10 @@ Retrieves all posts.
 # Group Client SSL
 This section groups iControl Client SLL profiles.
 
-## Client SSL State [/mgmt/tm/ltm/profile/client-ssl/{name}{?ver}]
+## Client SSL State [/mgmt/tm/ltm/profile/client-ssl/{name}?ver=11.5.0]
 
 + Parameters
     + name (string, `wom-default-clientssl`) ... Name of Client SSL profile
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
 
 + Model (application/json)
 
@@ -415,11 +409,8 @@ Returns a specific Virtual.
 
     [Client SSL State][]
 
-## Client SSL Collection State [/mgmt/tm/ltm/profile/client-ssl{?ver}]
+## Client SSL Collection State [/mgmt/tm/ltm/profile/client-ssl?ver=11.5.0]
 A Collection of client ssl profiles.
-
-+ Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
 
 + Model (application/json)
 
@@ -447,11 +438,10 @@ Retrieves all posts.
 # Group Pool
 This section groups iControl Pools.
 
-## Pool State [/mgmt/tm/ltm/pool/{name}{?ver,expandSubcollections}]
+## Pool State [/mgmt/tm/ltm/pool/{name}?ver=11.5.0{?expandSubcollections}]
 
 + Parameters
     + name (string, `wom-default-clientssl`) ... Name of Client SSL profile
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
     + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
 
 + Model (application/json)
@@ -538,11 +528,10 @@ Returns a specific pool state.
 
 + Response 200
 
-## Pool Collection State [/mgmt/tm/ltm/pool{?ver,expandSubcollections}]
+## Pool Collection State [/mgmt/tm/ltm/pool?ver=11.5.0{?expandSubcollections}]
 A Collection of client ssl profiles.
 
 + Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
     + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
 
 + Model (application/json)

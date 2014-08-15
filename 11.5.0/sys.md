@@ -1,9 +1,6 @@
 # Group SYS
 
-## SYS Collection State [/mgmt/tm/sys{?ver}]
-
-+ Parameters
-    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
+## SYS Collection State [/mgmt/tm/sys?ver=11.5.0]
 
 + Model (application/json)
 
