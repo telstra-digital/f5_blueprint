@@ -3,8 +3,8 @@
 Generating the docs:
 
 ```shell
-aglio -i 11.5.0.md -o index.html
-python -m SimpleHTTPServer
+npm install -g aglio wach
+make server
 ```
 
 ## See also

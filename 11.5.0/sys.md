@@ -1,0 +1,205 @@
+# Group SYS
+
+## SYS Collection State [/mgmt/tm/sys{?ver}]
+
++ Parameters
+    + ver (optional, string, `11.5.0`) ... The version of the API to consume.
+
++ Model (application/json)
+
+    ```json
+    {
+      "items": [
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/application?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/crypto?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/daemon-log-settings?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/disk?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/file?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/icall?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/log-config?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/sflow?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/software?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/url-db?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/cluster?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/config?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/daemon-ha?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/datastor?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/db?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/dns?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/feature-module?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/folder?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/global-settings?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/ha-group?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/httpd?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/log-rotate?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/management-dhcp?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/management-ip?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/management-route?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/ntp?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/outbound-smtp?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/provision?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/scriptd?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/service?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/smtp-server?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/snmp?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/sshd?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/state-mirroring?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/syslog?ver=11.5.0"
+          }
+        },
+        {
+          "reference": {
+            "link": "https://localhost/mgmt/tm/sys/ucs?ver=11.5.0"
+          }
+        }
+      ],
+      "selfLink": "https://localhost/mgmt/tm/sys?ver=11.5.0",
+      "kind": "tm:sys:syscollectionstate"
+    }
+    ```
+
+### Retrieve all SYS States [GET]
+Retrieves all ltm module components
+
++ Response 200
+
+    [SYS Collection State][]
+
