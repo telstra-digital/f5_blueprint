@@ -260,3 +260,96 @@ This section groups iControl VLANs.
 
     [VLAN State][]
 
+# Group Self
+This section groups iControl Selfs.
+
+## Self State [/mgmt/tm/net/self/{name}?ver=11.5.0{?expandSubcollections}]
+
++ Parameters
+    + name (string, `wom-default-clientssl`) ... Name of Client SSL profile
+    + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
+
++ Model (application/json)
+
+    ```json
+    {
+      "fwRulesReference": {
+        "isSubcollection": true,
+        "link": "https://localhost/mgmt/tm/net/self/~Common~sf_00b_f_auto/fw-rules?ver=11.5.0"
+      },
+      "vlan": "/Common/vlan460_00b_auto",
+      "unit": 1,
+      "trafficGroup": "/Common/traffic-group-1",
+      "kind": "tm:net:self:selfstate",
+      "name": "sf_00b_f_auto",
+      "fullPath": "sf_00b_f_auto",
+      "generation": 39588,
+      "selfLink": "https://localhost/mgmt/tm/net/self/sf_00b_f_auto?expandSubcollections=true&ver=11.5.0",
+      "address": "10.73.251.68/27",
+      "floating": "enabled",
+      "inheritedTrafficGroup": "false"
+    }
+    ```
+
+### Modify a Self [PUT]
+
++ Request
+
+    ```json
+    {}
+    ```
+
++ Response 200
+
+    [Self State][]
+
+### Retrieve a Self State [GET]
+
++ Response 200
+
+    [Self State][]
+
+
+### Delete a Self [DELETE]
+
++ Response 200
+
+## Self Collection State [/mgmt/tm/net/self?ver=11.5.0{?expandSubcollections}]
+
++ Parameters
+    + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
+
++ Model (application/json)
+
+    ```json
+    {
+      "items": [
+        {
+          "kind": "tm:net:self:selfstate",
+          "name": "test_self",
+          "...": "...",
+        }
+      ],
+      "selfLink": "https://localhost/mgmt/tm/net/self?ver=11.5.0",
+      "kind": "tm:net:self:selfcollectionstate"
+    }
+    ```
+
+### Retrieve all Self States [GET]
+
++ Response 200
+
+    [Self Collection State][]
+
+### Create a Self [POST]
+
++ Request
+
+    ```json
+    {}
+    ```
+
++ Response 200
+
+    [Self State][]
+
