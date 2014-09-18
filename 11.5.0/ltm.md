@@ -182,6 +182,10 @@ A Virtual is the other central object utilized by the App.net Stream API. It has
             "link": "https://localhost/mgmt/tm/ltm/virtual/~Common~test_vs/fw-rules?ver=11.5.0"
         },
         "vsIndex": 161045,
+        "rules": [
+            "/Common/test_rule",
+            "/Common/test_rule2"
+        ],
         "vlansDisabled": null,
         "translatePort": "enabled",
         "translateAddress": "enabled",
@@ -575,4 +579,95 @@ Create a new Virtual object. Mentions and hashtags will be parsed out of the pos
 + Response 200
 
     [Pool State][]
+
+# Group Rule
+This section groups iControl Rules.
+
+## Rule State [/mgmt/tm/ltm/rule/{name}?ver=11.5.0]
+
++ Parameters
+    + name (string, `test_rule2`) ... Name of Client SSL profile
+
++ Model (application/json)
+
+    ```json
+    {
+        "apiAnonymous": "when CLIENT_ACCEPTED {\n        set tmm_auth_ssl_cc_ldap_sid 0\n        set tmm_auth_ssl_cc_ldap_done 0\n}",
+        "selfLink": "https://localhost/mgmt/tm/ltm/rule/~Common~test_rule2?ver=11.5.0",
+        "generation": 1,
+        "fullPath": "/Common/test_rule2",
+        "partition": "Common",
+        "name": "test_rule2",
+        "kind": "tm:ltm:rule:rulestate"
+    }
+    ```
+
+### Modify a Rule [PUT]
+Modifies the rule.
+
++ Request
+
+    ```json
+    {
+        "apiAnonymous": "when CLIENT_ACCEPTED {\n\tset tmm_auth_ssl_cc_ldap_sid 0\n\tset tmm_auth_ssl_cc_ldap_done 0\n}"
+    }
+    ```
+
++ Response 200
+
+    [Rule State][]
+
+### Retrieve a Rule State [GET]
+Returns a specific rule state.
+
++ Response 200
+
+    [Rule State][]
+
+
+### Delete a Rule [DELETE]
+
++ Response 200
+
+## Rule Collection State [/mgmt/tm/ltm/rule?ver=11.5.0]
+A Collection of client ssl profiles.
+
++ Model (application/json)
+
+    ```json
+    {
+        "items": [
+            {
+                "name": "test_rule2",
+                "kind": "tm:ltm:rule:rulestate",
+                "...": "..."
+            }
+        ],
+        "selfLink": "https://localhost/mgmt/tm/ltm/rule?ver=11.5.0",
+        "kind": "tm:ltm:rule:rulecollectionstate"
+    }
+    ```
+
+### Retrieve all Rule States [GET]
+Retrieves all posts. 
+
++ Response 200
+
+    [Rule Collection State][]
+
+### Create a Rule [POST]
+Create a new Virtual object. Mentions and hashtags will be parsed out of the post text, as will bare URLs...
+
++ Request
+
+    ```json
+    {
+        "name": "test_rule4",
+        "apiAnonymous": "when CLIENT_ACCEPTED {\n\tset tmm_auth_ssl_cc_ldap_sid 0\n\tset tmm_auth_ssl_cc_ldap_done 0\n}"
+    }
+    ```
+
++ Response 200
+
+    [Rule State][]
 
