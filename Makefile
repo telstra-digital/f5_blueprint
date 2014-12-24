@@ -6,11 +6,13 @@ all: index.html
 $(BUILDIR):
 	mkdir $(BUILDIR)
 
-index.md: $(BUILDIR)
-	cat $(VERSION)/*.md > $(BUILDIR)/index.md
-
-index.html: index.md
-	aglio -i $(BUILDIR)/index.md -o $(BUILDIR)/index.html
+index.html: $(BUILDIR)
+	aglio -i $(VERSION)/index.md -o $(BUILDIR)/index.html
+	aglio -i $(VERSION)/cm.md -o $(BUILDIR)/cm.html
+	aglio -i $(VERSION)/ltm.md -o $(BUILDIR)/ltm.html
+	aglio -i $(VERSION)/net.md -o $(BUILDIR)/net.html
+	aglio -i $(VERSION)/security.md -o $(BUILDIR)/security.html
+	aglio -i $(VERSION)/sys.md -o $(BUILDIR)/sys.html
 
 server: index.html
-	@node server.js $(BUILDIR)& wach -o $(VERSION)/*.md, make
+	@node server.js $(BUILDIR) & wach -o $(VERSION)/*.md, make
