@@ -113,6 +113,87 @@ Retrieves all Security Firewall components
     [Firewall Components][]
 
 # Group Security Firewall Policy
+This section groups iControl virtual resources.
+
+## Firewall Policy State [/mgmt/tm/security/firewall/policy/{name}?ver=11.5.0{?expandSubcollections}]
+A Virtual is the other central object utilized by the App.net Stream API. It has rich text and annotations which comprise all of the content a users sees in their feed. Virtuals are closely tied to the follow graph...
+
++ Parameters
+    + name (string, `test_vs`) ... The name of the virtual server.
+    + expandSubcollections (optional, string, `true`) ... Expand the subcollection of the API.
+
++ Model (application/json)
+
+    ```json
+    {
+      "rulesReference": {
+        "items": [
+          {
+            "source": {
+              "addresses": [
+                {
+                  "name": "1.1.1.1"
+                }
+              ]
+            },
+            "destination": {
+              "addresses": [
+                {
+                  "name": "2.2.2.2"
+                }
+              ]
+            },
+            "status": "enabled",
+            "log": "no",
+            "kind": "tm:security:firewall:policy:rules:rulesstate",
+            "name": "TOP-1410",
+            "fullPath": "TOP-1410",
+            "generation": 605453,
+            "selfLink": "https://localhost/mgmt/tm/security/firewall/policy/~Common~TOP-1410/rules/TOP-1410?ver=11.5.0",
+            "action": "reject",
+            "description": "Rule:",
+            "ipProtocol": "any"
+          }
+        ],
+        "isSubcollection": true,
+        "link": "https://localhost/mgmt/tm/security/firewall/policy/~Common~TOP-1410/rules?ver=11.5.0"
+      },
+      "description": "Policy: Block all traffic from Load-balancers to BB VIPs",
+      "selfLink": "https://localhost/mgmt/tm/security/firewall/policy/~Common~TOP-1410?expandSubcollections=true&ver=11.5.0",
+      "generation": 605434,
+      "fullPath": "/Common/TOP-1410",
+      "partition": "Common",
+      "name": "TOP-1410",
+      "kind": "tm:security:firewall:policy:policystate"
+    }
+    ```
+
+### Modify a Firewall Policy [PUT]
+Modifies the virtual server.
+
++ Request
+
+    ```json
+    {
+    }
+    ```
+
++ Response 200
+
+    [Firewall Policy State][]
+
+### Retrieve a Firewall Policy State [GET]
+Returns a specific Virtual.
+
++ Response 200
+
+    [Firewall Policy State][]
+
+### Delete a Firewall Policy [DELETE]
+Delete a Virtual. The current user must be the same user who created the Virtual. It returns the deleted Virtual on success.
+
++ Response 200
+
 
 ## Firewall Policy Collection [/mgmt/tm/security/firewall/policy?ver=11.5.0{?expandSubcollections}]
 
